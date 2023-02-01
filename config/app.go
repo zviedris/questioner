@@ -24,7 +24,7 @@ func InitAppConfig() (*AppConfig, error) {
 	//default automigration is true
 	migration := true
 
-	appPort := os.Getenv("PORT")
+	appPort := os.Getenv("QUESTIONER_PORT")
 	if appPort == "" {
 		appPort = "1323"
 	}
@@ -39,21 +39,21 @@ func InitAppConfig() (*AppConfig, error) {
 		return nil, errors.New("database url not set")
 	}
 
-	if os.Getenv("AUTO_MIGRATE") != "" {
-		if os.Getenv("QUESTIONER_DATABASE_URL") == "true" {
-			migration = true
-		} else {
-			migration = false
-		}
-	}
+	//automigrate by default true
+	/*
+		if os.Getenv("AUTO_MIGRATE") != "" {
+			if os.Getenv("QUESTIONER_DATABASE_URL") == "true" {
+				migration = true
+			} else {
+				migration = false
+			}
+		}*/
 
 	return &AppConfig{
 		Environment:    currentEnv,
 		AppPort:        appPort,
 		DatabaseURL:    databaseUrl,
 		MaxConnections: 500,
-
-		// 3rd-parties settings
-		AutoMigrate: migration,
+		AutoMigrate:    migration,
 	}, nil
 }
