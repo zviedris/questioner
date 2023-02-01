@@ -40,5 +40,5 @@ func main() {
 	e.POST("/response/save", handlers.SaveResponse)
 	e.GET("/statistics/question/:id", handlers.QuestionStatistics)
 
-	e.Logger.Fatal(e.Start(conf.AppPort))
+	e.Logger.Fatal(e.Start(":" + conf.AppPort))
 }
