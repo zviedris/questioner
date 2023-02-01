@@ -3,15 +3,17 @@ module github.com/zviedris/questioner
 go 1.19
 
 require (
+	github.com/gocraft/dbr/v2 v2.7.3
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/labstack/echo/v4 v4.10.0
 	github.com/labstack/gommon v0.4.0
-	github.com/zviedris/infrastructure v0.0.0-20230114124552-3447b8202f1e
-	github.com/zviedris/migrations v0.0.6
+	github.com/zviedris/infrastructure v0.0.4
+	github.com/zviedris/migrations v0.0.7
 )
 
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
+	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/golang-migrate/migrate/v4 v4.15.2 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
